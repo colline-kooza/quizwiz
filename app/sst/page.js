@@ -23,17 +23,17 @@ export default function Page() {
 
   const question = sst[currentQuestion];
 
-  const correctSound = new Audio("/images/success.mp3");
-  const wrongSound = new Audio("/images/error.mp3");
+  // const correctSound = new Audio("/images/success.mp3");
+  // const wrongSound = new Audio("/images/error.mp3");
 
   function handleOptionsSelect(option) {
     setSelectOptions(option);
     setShowAnswer(true);
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
-      correctSound.play();
+      // correctSound.play();
     } else {
-      wrongSound.play();
+      // wrongSound.play();
     }
   }
 

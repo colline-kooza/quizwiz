@@ -22,8 +22,8 @@ export default function Page() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(7);
 
-  const correctSound = new Audio("/images/success.mp3");
-  const wrongSound = new Audio("/images/error.mp3");
+  // const correctSound = new Audio("/images/success.mp3");
+  // const wrongSound = new Audio("/images/error.mp3");
 
   const question = english[currentQuestion];
   function handleOptionsSelect(option) {
@@ -31,9 +31,9 @@ export default function Page() {
     setShowAnswer(true);
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
-      correctSound.play();
+      // correctSound.play();
     } else {
-      wrongSound.play();
+      // wrongSound.play();
     }
   }
 
