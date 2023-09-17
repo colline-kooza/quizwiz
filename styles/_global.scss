@@ -1,0 +1,98 @@
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
+}
+
+.swiper-pagination-bullets {
+  display: none;
+}
+.bg {
+  background-color: #0d1629;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #5adbf7;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.student1 {
+  background-color: #ffc160;
+}
+.student2 {
+  background: linear-gradient(to bottom, #8db5bc, #b5d8de);
+}
+
+.background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1450' height='566' preserveAspectRatio='none' viewBox='0 0 1450 566'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1074%26quot%3b)' fill='none'%3e%3crect width='1450' height='566' x='0' y='0' fill='rgba(2%2c 9%2c 18%2c 1)'%3e%3c/rect%3e%3cpath d='M1031.6131447286214 293.8749318369584L1154.802239854168 306.8226274731996 1167.749935490409 183.6335323476531 1044.5608403648625 170.68583671141192z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M711.4792998929851 131.67980107115753L832.0129408620628 157.3000173611135 857.6331571520187 36.766376392035795 737.099516182941 11.146160102079833z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M472.72 345.5 a110.59 110.59 0 1 0 221.18 0 a110.59 110.59 0 1 0 -221.18 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M319.72 262.87 a145.48 145.48 0 1 0 290.96 0 a145.48 145.48 0 1 0 -290.96 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M457.053%2c172.506C476.904%2c172.206%2c497.899%2c167.272%2c507.921%2c150.134C518.018%2c132.869%2c512.692%2c111.738%2c502.736%2c94.391C492.726%2c76.95%2c477.119%2c62.828%2c457.053%2c61.506C434.558%2c60.024%2c411.114%2c68.213%2c399.598%2c87.594C387.875%2c107.323%2c390.589%2c132.707%2c403.45%2c151.714C414.961%2c168.726%2c436.514%2c172.817%2c457.053%2c172.506' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1074'%3e%3crect width='1450' height='566' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-position: center center;
+}
+.successBg {
+  background-color: #0d1629;
+}
+.Incorrect {
+  background-color: rgb(137, 8, 8);
+}
+.correct {
+  background-color: rgba(0, 128, 0, 0.558);
+  color: white;
+}
