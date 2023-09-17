@@ -68,9 +68,9 @@ export default function SetTime() {
                     </SheetTitle>
                     <SheetDescription>
                       <div className="flex flex-col gap-4 text-[16px] text-gray-300 items-start">
-                        <Link href="">👌Math</Link>
-                        <Link href="">👍Social Studies</Link>
-                        <Link href="">🙌Science</Link>
+                        <Link href="mathFolder">👌Math</Link>
+                        <Link href="/sst">👍Social Studies</Link>
+                        <Link href="/science">🙌Science</Link>
                         <Link href="/english">😊English</Link>
                       </div>
                     </SheetDescription>
@@ -100,7 +100,7 @@ export default function SetTime() {
               </Sheet>
               <Link
                 className="bg-gray-600 flex items-center justify-center px-8 py-3 rounded-[30px] hover:bg-black  transition-all"
-                href=""
+                href="/login"
               >
                 Login/Signup
               </Link>
