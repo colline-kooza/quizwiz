@@ -13,38 +13,21 @@ export const english = [
   },
   {
     id: 3,
-    question:
-      "You bought all this food for me, but I don’t want. (Use: ….…needless………)",
-    Options: [
-      "why did you bring this food for me it is needless?",
-      "You bought all this food for me, but I don’t need it.",
-      "you bring me this needless food ",
-      "This food you brought for me is needless ",
-    ],
-    answer: "You bought all this food for me, but I don’t need it.",
+    question: "Write the opposite of 'humble'.",
+    Options: ["Proud", "Arrogant", "Modest", "Confident"],
+    answer: "Arrogant",
   },
   {
     id: 4,
-    question:
-      "Write the correct sentence in brackets >The tyre_____________ as the driver was speeding. (burst).",
-    Options: [
-      "The tyre burst as the driver was speeding.",
-      "The tyre was burst as the driver was speeding.",
-      "The tyre bursting as the driver was speeding.",
-      "The tyre has burst as the driver was speeding.",
-    ],
-    answer: "The tyre burst as the driver was speeding.",
+    question: "Write the opposite of 'sends'.",
+    Options: ["Receives", "Delivers", "Transmits", "Forwards"],
+    answer: "Receives",
   },
   {
     id: 5,
-    question: "A dictionary is_________________________ than an atlas. (cost).",
-    Options: [
-      "A dictionary is less expensive than an atlas.",
-      "A dictionary costs the same as an atlas.",
-      "A dictionary is more expensive than an atlas.",
-      "A dictionary is not related to the cost of an atlas.",
-    ],
-    answer: "A dictionary is more expensive than an atlas.",
+    question: "Write the opposite of 'law'.",
+    Options: ["Crime", "Chaos", "Order", "Justice"],
+    answer: "Chaos",
   },
 ];
 
@@ -157,31 +140,27 @@ export const math = [
   },
   {
     id: 2,
-    question: "Write 55,555 in words.",
-    Options: [
-      "Five hundred fifty-five thousand five hundred fifty-five",
-      "Fifty-five thousand five hundred fifty five",
-      "Five hundred fifty-five thousand five hundred five",
-      "Fifty-five thousand five hundred fifty-five",
-    ],
-    answer: "Fifty-five thousand five hundred fifty-five",
+    question: "Convert 128 base five to base ten.",
+    Options: ["46", "36", "78", "78"],
+    answer: "46",
   },
   {
     id: 3,
-    question: "Solve: 2x + 3x + 4 = 29.",
-    Options: ["x = 6", "x = 7", "x = 5", "x = 8"],
-    answer: "x = 5",
+    question:
+      "Arrange the following integers in ascending order: -7, 4, 0, -3.",
+    Options: ["-7, -3, 0, 4", "4, 0, -3, -7", "0, -3, 4, -7", "-3, 0, 4, -7"],
+    answer: "-7, -3, 0, 4",
   },
   {
     id: 4,
-    question: "Write CCXLIX as a Hindu-Arabic numeral.",
-    Options: ["254", "249", "449", "359"],
-    answer: "249",
+    question: "Simplify -5 - (-8).",
+    Options: ["-3", "3", "-13", "13"],
+    answer: "3",
   },
   {
     id: 5,
-    question: "Work out: 14 − 12 + 6.",
-    Options: ["4", "6", "16", "8"],
-    answer: "8",
+    question: "Calculate 12/2.",
+    Options: ["2", "6", "8", "12"],
+    answer: "6",
   },
 ];
