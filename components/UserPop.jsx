@@ -29,7 +29,7 @@ export default function UserPop({ userName }) {
             WELCOME, {userName}😁!
           </p>
           <Link
-            className="bg-blue-600 flex items-center justify-center px-8 py-3 rounded-[30px] hover:bg-black  transition-all"
+            className="bg-blue-600 flex items-center justify-center px-8 py-3 rounded-[30px] hover:bg-black text-white transition-all font-[800]"
             href="/"
           >
             Lets play
