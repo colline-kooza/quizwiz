@@ -21,28 +21,21 @@ export default function Page() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(7);
 
-  // const correctSound = new Audio("/images/success.mp3");
-  // const wrongSound = new Audio("/images/error.mp3");
-
   const question = english[currentQuestion];
-  useEffect(() => {
-    if (showAnswer) {
-      if (selectOptions === question.answer) {
-        setScore((prevScore) => prevScore + 1);
-        correctSound.play();
-      } else {
-        wrongSound.play();
-      }
-    }
-  }, [showAnswer, selectOptions, question.answer]);
+
+  function playAudio(source) {
+    const audio = new Audio(source);
+    audio.play();
+  }
+
   function handleOptionsSelect(option) {
     setSelectOptions(option);
     setShowAnswer(true);
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
-      // correctSound.play();
+      playAudio("/images/success.mp3");
     } else {
-      // wrongSound.play();
+      playAudio("/images/error.mp3");
     }
   }
 
@@ -60,19 +53,19 @@ export default function Page() {
     setCurrentQuestion(0);
     setScore(0);
     setTimeLeft(7);
-    setSelectOptions("");
   }
   useEffect(() => {
     let timer;
     if (timeLeft > 0) {
       timer = setTimeout(() => {
         setTimeLeft(timeLeft - 1);
-      }, 4000);
+      }, 3000);
     } else {
       handleNext();
     }
     return () => clearTimeout(timer);
   }, [timeLeft]);
+
   return (
     <>
       {showResults ? (
