@@ -23,9 +23,6 @@ export default function Page() {
 
   const question = science[currentQuestion];
 
-  // const correctSound = new Audio("/images/success.mp3");
-  // const wrongSound = new Audio("/images/error.mp3");
-
   function playAudio(source) {
     const audio = new Audio(source);
     audio.play();

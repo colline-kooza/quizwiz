@@ -1,4 +1,5 @@
 "use client";
+import UserPop from "@/components/UserPop";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -6,6 +7,7 @@ import { useForm } from "react-hook-form";
 export default function Page() {
   const [storedPassword, setStoredPassword] = useState("");
   const [formData, setFormData] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { handleSubmit, register } = useForm();
   const router = useRouter();
 
@@ -24,12 +26,12 @@ export default function Page() {
   const onSubmit = (data) => {
     setFormData(data);
     localStorage.setItem("loginData", JSON.stringify(data));
-    router.push("/");
+    setIsLoggedIn(true);
   };
   const onLogin = (data) => {
     if (data.password === storedPassword) {
       setLoginError(false);
-      router.push("/");
+      setIsLoggedIn(true);
     } else {
       setLoginError(true);
     }
@@ -118,7 +120,10 @@ export default function Page() {
             </form>
           )}
         </div>
-        {loginError && <p className="text-red-500">Password is incorrect.</p>}
+        {loginError && (
+          <p className="text-red-500 font-[800]">Password is incorrect.</p>
+        )}
+        {isLoggedIn && <UserPop userName={formData.Name} />}
       </div>
     </div>
   );
