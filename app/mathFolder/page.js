@@ -25,15 +25,18 @@ export default function Page() {
 
   // const correctSound = new Audio("/images/success.mp3");
   // const wrongSound = new Audio("/images/error.mp3");
-
+  function playAudio(source) {
+    const audio = new Audio(source);
+    audio.play();
+  }
   function handleOptionsSelect(option) {
     setSelectOptions(option);
     setShowAnswer(true);
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
-      // correctSound.play();
+      playAudio("/images/success.mp3");
     } else {
-      // wrongSound.play();
+      playAudio("/images/error.mp3");
     }
   }
 
