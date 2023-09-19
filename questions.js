@@ -93,7 +93,7 @@ export const science = [
       "Give any way in which evaporation is important in the environment.",
     Options: [
       "Soil erosion",
-      "Carbon dioxide absorption",
+      "Carbon dioxide",
       "Earthquake prevention",
       "Cooling effect",
     ],
