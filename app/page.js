@@ -92,16 +92,20 @@ export default function SetTime() {
                     <SheetDescription>
                       <div className="flex flex-col gap-4 text-[16px] text-gray-300 items-start">
                         <Link className="flex gap-3" href="mathFolder">
-                          👌Math
+                          <p>👌</p>
+                          <p>Math</p>
                         </Link>
                         <Link className="flex gap-3" href="/sst">
-                          👍Social Studies
+                          <p>👍</p>
+                          <p>Social Studies</p>
                         </Link>
                         <Link className="flex gap-3" href="/science">
-                          🙌Science
+                          <p>🙌</p>
+                          <p>Science</p>
                         </Link>
                         <Link className="flex gap-3" href="/english">
-                          😊English
+                          <p>😊</p>
+                          <p>English</p>
                         </Link>
                       </div>
                     </SheetDescription>

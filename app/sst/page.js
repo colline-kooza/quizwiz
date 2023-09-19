@@ -36,7 +36,7 @@ export default function Page() {
       setScore((prevScore) => prevScore + 1);
       playAudio("/images/success.mp3");
     } else {
-      playAudio("/images/error.mp3");
+      playAudio("/images/error2.mp3");
     }
   }
 
@@ -61,7 +61,7 @@ export default function Page() {
     if (timeLeft > 0) {
       timer = setTimeout(() => {
         setTimeLeft(timeLeft - 1);
-      }, 3000);
+      }, 2500);
     } else {
       handleNext();
     }
