@@ -24,8 +24,8 @@ export default function UserPop({ userName }) {
   return (
     <div>
       {displayH2 && (
-        <div className="popup w-[100%] h-[100vh] bg-slate-900 absolute top-0 left-0  items-center justify-center flex flex-col gap-8">
-          <p className="text-[50px] font-[900] text-white text-center">
+        <div className="popup w-[100%] h-[100vh] bg-slate-900 absolute top-0 left-0  items-center justify-center flex flex-col gap-8 overflow-hidden">
+          <p className="text-[30px] font-[900] text-white text-center lg:text-[50px] ">
             WELCOME, {userName}😁!
           </p>
           <Link

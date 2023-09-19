@@ -7,11 +7,12 @@ import {
 } from "react-icons/ai";
 import { BsFacebook, BsFillArrowRightCircleFill, BsSun } from "react-icons/bs";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { motion, useAnimation } from "framer-motion";
 import { FcTimeline } from "react-icons/fc";
-import { sst } from "questions.js";
 import Image from "next/image";
 import Link from "next/link";
 import ToggleButton from "@/components/ToggleButton";
+import { sst } from "@/questions";
 
 export default function Page() {
   const [selectOptions, setSelectOptions] = useState("");
@@ -23,8 +24,6 @@ export default function Page() {
 
   const question = sst[currentQuestion];
 
-  // const correctSound = new Audio("/images/success.mp3");
-  // const wrongSound = new Audio("/images/error.mp3");
   function playAudio(source) {
     const audio = new Audio(source);
     audio.play();
@@ -52,6 +51,7 @@ export default function Page() {
   }
   function Restart() {
     setShowResults(false);
+    setShowAnswer(false);
     setCurrentQuestion(0);
     setScore(0);
     setTimeLeft(7);
@@ -67,6 +67,47 @@ export default function Page() {
     }
     return () => clearTimeout(timer);
   }, [timeLeft]);
+  const taglineVariants = {
+    hidden: {
+      y: -40,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.35 },
+    },
+  };
+  const AnswerEffect = {
+    hidden: {
+      x: -900,
+      opacity: 0,
+      scale: 0.2,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.35,
+        type: "spring",
+        stiffness: 150,
+      },
+    },
+  };
+
+  const optionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        delay: i * 0.8,
+      },
+    }),
+  };
   return (
     <>
       {showResults ? (
@@ -92,10 +133,22 @@ export default function Page() {
               Congrats!
             </h2>
             <div className="flex gap-2">
-              <h2 className="text-green-400 dark:text-green-300 text-[29px]">
+              <motion.h2
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-green-400 dark:text-green-300 text-[29px]"
+              >
                 {score}
-              </h2>
-              <h2 className="text-green-400 text-[29px]">Score</h2>
+              </motion.h2>
+              <motion.h2
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-green-400 text-[29px]"
+              >
+                Score
+              </motion.h2>
             </div>
             <h3 className="text-slate-300 dark:text-slate-400 font-[800] text-[20px] text-center">
               Quiz completed successfully.
@@ -119,6 +172,8 @@ export default function Page() {
               </div>
             </div>
             <button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="bg-blue-800 px-[30px] py-[12px] shadow-red-500/90 shadow-sm font-[700] rounded-[20px] mt-3 hover:bg-slate-600 transition-all"
               onClick={Restart}
             >
@@ -127,12 +182,18 @@ export default function Page() {
           </div>
         </div>
       ) : (
-        <div className="w-[100%] min-h-[100vh] flex background relative justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-[100%] min-h-[100vh] flex background relative justify-center"
+        >
           <div className="flex flex-col w-[100%] lg:w-[50%] min-h-[40vh] p-8  text-white ">
-            <div className="lg:h-[15%] h-[10%] flex justify-between p-8 bg-gray-300 items-center shadow-cyan-500/50 dark:bg-slate-800">
+            <div className="lg:h-[15%] h-[10%] flex justify-between p-8 bg-gray-300 items-center shadow-md shadow-cyan-500/50  dark:bg-slate-800">
               <h1 className="font-[900] text-[20px] lg:text-[22px] flex items-center gap-3 text-black dark:text-white">
                 <FcTimeline />
-                SOCIAL STUDIES
+                SOCAIL STUDIES
               </h1>
               <ToggleButton />
             </div>
@@ -157,15 +218,23 @@ export default function Page() {
             </div>
             <hr />
             <div className="flex flex-col px-[.8rem] lg:px-[3rem] lg:text-[20px] gap-3 text-[18px] py-[2rem]">
-              <h2 className="text-gray-100 font-[800] shadow-cyan-500/50 dark:text-gray-300">
+              <motion.h2
+                variants={AnswerEffect}
+                initial="hidden"
+                animate="animate"
+                className="text-gray-100 font-[800] shadow-cyan-500/50 dark:text-gray-300"
+              >
                 {question.id}.{question.question}
-              </h2>
+              </motion.h2>
             </div>
             <div className="flex flex-col gap-5">
               <div className="text-white flex flex-col gap-6 items-center">
                 {question.Options.map((option) => {
                   return (
-                    <div
+                    <motion.div
+                      variants={optionVariants}
+                      initial="hidden"
+                      animate="visible"
                       key={option.id}
                       onClick={() => handleOptionsSelect(option)}
                       className={`flex gap-8 px-4 bg-gray-300 rounded-[30px] lg:w-[60%] w-[100%] py-3 shadow-lg shadow-cyan-500/50 cursor-pointer ${
@@ -176,19 +245,26 @@ export default function Page() {
                           : ""
                       }`}
                     >
-                      <h2 className="bg-green-500 dark:text-black text-white dark:bg-orange-500 shadow-lg shadow-cyan-500/50 px-3 py-3 rounded-[50%] text-[20px]">
+                      <motion.h2
+                        variants={taglineVariants}
+                        initial="hidden"
+                        animate="animate"
+                        className="bg-green-500 dark:text-black text-white dark:bg-orange-500 shadow-lg shadow-cyan-500/50 px-3 py-3 rounded-[50%] text-[20px]"
+                      >
                         <AiOutlineArrowRight />
-                      </h2>
+                      </motion.h2>
                       <button className="text-black font-[600]">
                         {option}
                       </button>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
             </div>
             <div className="flex items-center justify-center mt-[4rem]">
               <button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={handleNext}
                 className="bg-orange-600 text-lg flex items-center justify-center text-black font-[700] w-[35%] lg:w-[28%] py-2 rounded-[30px] gap-1 cursor-pointer hover:bg-orange-400 transition-all shadow-yellow-500/50 dark:bg-white"
               >
@@ -196,7 +272,7 @@ export default function Page() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
