@@ -1,4 +1,5 @@
 "use client";
+import { motion, useAnimation } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -33,19 +34,41 @@ export default function SetTime() {
       clearTimeout(showTimer);
     };
   }, []);
-
+  const AnswerEffect = {
+    hidden: {
+      x: -900,
+      opacity: 0,
+      scale: 0.2,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.35,
+        type: "spring",
+        stiffness: 150,
+      },
+    },
+  };
   return (
     <div>
       {displayH2 && (
-        <div className="bg w-[100%] min-h-[100vh] text-white">
+        <div className="bg w-[100%] min-h-[100vh] text-white ">
           <SwiperHome />
           <div className="flex flex-col  lg:px-[5rem] lg:flex-row gap-8 lg:gap-0  lg:p-8  w-[100%]">
-            <div className="w-[100%] lg:w-[50%] flex flex-col lg:gap-8 gap-5 px-[2rem] py-4">
+            <motion.h2
+              variants={AnswerEffect}
+              initial="hidden"
+              animate="animate"
+              className="w-[100%] lg:w-[50%] flex flex-col lg:gap-8 gap-5 px-[2rem] py-4"
+            >
               <h1 className="font-[900] text-[24px]  lg:text-[30px]">
                 Quiz Wiz Challenge 😍
               </h1>
               <TypedScript />
-            </div>
+            </motion.h2>
             <div className="lg:w-[50%] w-[100%]">
               <SwiperCard />
             </div>
@@ -56,7 +79,7 @@ export default function SetTime() {
               <p className="w-[9px] h-[8px] bg-blue-900 rounded"></p>
               <p className="w-[9px] h-[8px] bg-blue-900 rounded"></p>
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 py-7">
               <Sheet>
                 <SheetTrigger className="bg-blue-600 px-8 py-3 rounded-[30px] hover:bg-black  transition-all">
                   Select Subject to start
