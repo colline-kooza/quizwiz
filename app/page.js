@@ -82,7 +82,7 @@ export default function SetTime() {
             <div className="flex flex-col gap-3 py-7">
               <Sheet>
                 <SheetTrigger className="bg-blue-600 px-8 py-3 rounded-[30px] hover:bg-black  transition-all">
-                  Select Subject to start
+                  Start Quiz 😁😁
                 </SheetTrigger>
                 <SheetContent className="bg-slate-800">
                   <SheetHeader>
@@ -133,12 +133,12 @@ export default function SetTime() {
                   </SheetHeader>
                 </SheetContent>
               </Sheet>
-              <Link
+              {/* <Link
                 className="bg-gray-600 flex items-center justify-center px-8 py-3 rounded-[30px] hover:bg-black  transition-all"
                 href="/login"
               >
                 Login/Signup
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

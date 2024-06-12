@@ -39,7 +39,6 @@ export default function Page() {
       playAudio("/images/error2.mp3");
     }
   }
-
   function handleNext() {
     if (currentQuestion === english.length - 1) {
       setShowResults(true);
